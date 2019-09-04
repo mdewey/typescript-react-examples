@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import PercentageButton from './PercentageButton'
 const TipCalculator = () => {
   const [total, setTotal] = useState<number>(0)
   const [grandTotal, setGrandTotal] = useState<string>('0')
@@ -32,24 +32,24 @@ const TipCalculator = () => {
         onChange={e => setTotal(parseInt(e.target.value))}
       />
       <ul>
-        <li>
-          15% - $<span id="fifteen-percent">{getTipDisplay(total, 0.15)}</span>
-          <button className="button-15" onClick={() => selectTip(0.15)}>
-            SELECT
-          </button>
-        </li>
-        <li>
-          18% - $<span id="eighteen-percent">{getTipDisplay(total, 0.18)}</span>
-          <button className="button-18" onClick={() => selectTip(0.18)}>
-            SELECT
-          </button>
-        </li>
-        <li>
-          20% - $<span id="twenty-percent">{getTipDisplay(total, 0.2)}</span>
-          <button className="button-20" onClick={() => selectTip(0.2)}>
-            SELECT
-          </button>
-        </li>
+        <PercentageButton
+          amount={0.15}
+          total={total}
+          selectTip={selectTip}
+          getTipDisplay={getTipDisplay}
+        />
+        <PercentageButton
+          amount={0.18}
+          total={total}
+          selectTip={selectTip}
+          getTipDisplay={getTipDisplay}
+        />
+        <PercentageButton
+          amount={0.2}
+          total={total}
+          selectTip={selectTip}
+          getTipDisplay={getTipDisplay}
+        />
       </ul>
       <h2>
         total pre-tip: $<span id="total">{total || 0}</span>
