@@ -15,7 +15,7 @@ const TipCalculator = () => {
 
   const selectTip = percentage => {
     const tip = calculateTip(total, percentage)
-    const grandTotal = total + tip
+    const grandTotal = tip + total
     setGrandTotal(grandTotal)
   }
 
