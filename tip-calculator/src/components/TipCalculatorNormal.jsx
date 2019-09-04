@@ -36,17 +36,18 @@ const TipCalculator = () => {
             </button>
           </li>
           <li>
-            18% - $<span id="eighteen-percent">1.50</span>
+            18% - $
+            <span id="eighteen-percent">{calculateTip(total, 0.18)}</span>
             <button class="button-18">SELECT</button>
           </li>
           <li>
-            20% - $<span id="twenty-percent">2.00</span>
+            20% - $<span id="twenty-percent">{calculateTip(total, 0.2)}</span>
             <button class="button-20">SELECT</button>
           </li>
         </ul>
       </ul>
       <h2>
-        total pre-tip: $<span id="total">{total || 0}</span>
+        total pre-tip: $<span id="total">{total}</span>
       </h2>
       <h2>
         tip: $<span id="total">1.00</span>
